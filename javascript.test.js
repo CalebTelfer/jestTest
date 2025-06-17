@@ -1,4 +1,4 @@
-const {capitalize,  reverseString, calculator, caesarCipher} = require('./javascript.js');
+const {capitalize,  reverseString, calculator, caesarCipher, analyzeArray} = require('./javascript.js');
 
 test('String to uppercase first char', () => {
   expect(capitalize("canada")).toBe("Canada");
@@ -33,4 +33,21 @@ test("Caesar cipher wrapping", () => {
 
 test("Caesar cipher punctuation", () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+})
+
+
+test("Array of numbers returns average", () => {
+    expect(analyzeArray([1,2,3,4,5,6]).average).toBe(3.5);
+})
+
+test("Array of numbers returns min", () => {
+    expect(analyzeArray([1,2,3,4,5,6]).min).toBe(1);
+})
+
+test("Array of numbers returns max", () => {
+    expect(analyzeArray([1,2,3,4,5,6]).max).toBe(6);
+})
+
+test("Array of numbers returns length", () => {
+    expect(analyzeArray([1,2,3,4,5,6]).length).toBe(6);
 })

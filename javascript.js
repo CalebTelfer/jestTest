@@ -53,4 +53,31 @@ function caesarCipher(str, shiftFactor) {
     }
     return encodedStr;
 }
-  module.exports = {capitalize, reverseString, calculator, caesarCipher};
+
+
+
+function analyzeArray(arr) {
+    const avg = arr.reduce((acc, num) => acc + num) / arr.length;
+    const len = arr.length;
+
+    let maximum = arr[0];
+    let minimum = arr[0];
+    for (let i = 0; i < len; i++) {
+        if (arr[i] > maximum) {
+            maximum = arr[i];
+        }
+
+        if (arr[i] < minimum) {
+            minimum = arr[i];
+        }
+    }
+
+    return {
+        average: avg,
+        min: minimum,
+        max: maximum,
+        length: len
+    }
+}
+
+  module.exports = {capitalize, reverseString, calculator, caesarCipher, analyzeArray};
